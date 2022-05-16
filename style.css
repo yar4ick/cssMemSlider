@@ -21,17 +21,37 @@ PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
 http://stackoverflow.com/a/34696029/383904
 */
 
-.wrapper {
-  max-width: 800px;
-  background-color: var(--main);
-  max-width: 600px;
-  height: 400px;
-  text-align: center;
-  border-radius: 20px;
-  overflow: hidden;
-  position: absolute;
-  /* transform: translateY(50%) translateX(80%); */
+.wrap {
+  max-width: 85vw;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin: 0 auto;
+  /* border: 2px solid red; */
+}
+
+.wrapper {
+  /* max-width: 800px; */
+  background-color: var(--main);
+  max-width: 40vw;
+  height: auto;
+  text-align: center;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: 0 auto;
+  /* position: absolute; */
+  /* transform: translateY(50%) translateX(80%); */
+}
+
+.slider-image {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.h1 {
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .CSSgal {
@@ -63,7 +83,8 @@ http://stackoverflow.com/a/34696029/383904
   /* font-size: 1rem; */
   display: inline-block;
   /* white-space: normal; */
-  vertical-align: top;
+  /* vertical-align: top; */
+  padding-top: 2rem;
   height: 100%;
   width: 100%;
   background: none 50% no-repeat;
@@ -83,26 +104,28 @@ http://stackoverflow.com/a/34696029/383904
   transform: translateY(110%) translate(-630%); */
 }
 
-/* .text-slider__content {
-    position: absolute;
-    transform: translateY(110%) translate(-630%);
-  } */
+.text-slider__content {
+  margin-left: 0.25rem;
+}
 
 /* NAVIGATION */
 
 .CSSgal .bullets {
-  position: absolute;
+  /* position: absolute; */
   z-index: 2;
-  bottom: 0;
-  padding: 10px 0;
+  /* bottom: 0;
+  padding: 10px 0; */
   width: 100%;
   text-align: center;
-  transform: translateX(30%) translateY(-125%);
+  transform: translateX(30%) translateY(-60%);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
 }
 .CSSgal .bullets > a {
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 0.65rem;
+  width: 0.65rem;
   border-radius: 50%;
   border: 2px solid var(--button);
   background-color: var(--button);
@@ -193,23 +216,23 @@ http://stackoverflow.com/a/34696029/383904
 }
 
 #s1:target ~ .text-slider {
-  transform: translateX(-35%) translateY(100%);
-  -webkit-transform: translateX(-35%) translateY(100%);
+  transform: translateX(-32%) translateY(135%);
+  -webkit-transform: translateX(-32%) translateY(135%);
 }
 
 #s2:target ~ .text-slider {
-  transform: translateX(-135%) translateY(100%);
-  -webkit-transform: translateX(-135%) translateY(100%);
+  transform: translateX(-132%) translateY(135%);
+  -webkit-transform: translateX(-132%) translateY(135%);
 }
 
 #s3:target ~ .text-slider {
-  transform: translateX(-236%) translateY(100%);
-  -webkit-transform: translateX(-236%) translateY(100%);
+  transform: translateX(-232%) translateY(135%);
+  -webkit-transform: translateX(-232%) translateY(135%);
 }
 
 #s4:target ~ .text-slider {
-  transform: translateX(-337%) translateY(100%);
-  -webkit-transform: translateX(-337%) translateY(100%);
+  transform: translateX(-327%) translateY(135%);
+  -webkit-transform: translateX(-327%) translateY(135%);
 }
 /* More slides? Add here more rules */
 
