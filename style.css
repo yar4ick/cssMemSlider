@@ -123,20 +123,19 @@ http://stackoverflow.com/a/34696029/383904
   margin-right: 2rem;
 }
 .CSSgal .bullets > a {
+  padding: 0.25rem;
+  margin: -0.25rem;
+}
+
+.button {
   display: inline-block;
   height: 0.65rem;
   width: 0.65rem;
   border-radius: 50%;
   border: 2px solid var(--button);
   background-color: var(--button);
-  margin: 0 5px 0 5px;
+  margin: 0 0.25rem 0 0.25rem;
   transition: 0.2s;
-  /* width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-decoration: none;
-  text-align: center;
-  background: rgba(255, 255, 255, 1); */
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -145,49 +144,54 @@ http://stackoverflow.com/a/34696029/383904
   background: rgba(255, 255, 255, 0.5); 
 } */
 
-.CSSgal .bullets > a:hover {
+/* .CSSgal .bullets > a:hover {
+  background: white !important;
+  border: none;
+} */
+
+a:hover .button {
   background: white !important;
   border: none;
 }
 
 /* NAVIGATION BUTTONS */
 /* ALL: */
-.CSSgal > s:target ~ .bullets > * {
+.CSSgal > s:target ~ .bullets > a > .button {
   background: var(--button);
 }
 /* ACTIVE */
-#s1:target ~ .bullets > *:nth-child(1) {
+#s1:target ~ .bullets > *:nth-child(1) .button {
   background: none;
 }
 
-#s1:target ~ .bullets > *:nth-child(1):hover {
+#s1:target ~ .bullets > *:nth-child(1):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s2:target ~ .bullets > *:nth-child(2) {
+#s2:target ~ .bullets > *:nth-child(2) .button {
   background: none;
 }
 
-#s2:target ~ .bullets > *:nth-child(2):hover {
+#s2:target ~ .bullets > *:nth-child(2):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s3:target ~ .bullets > *:nth-child(3) {
+#s3:target ~ .bullets > *:nth-child(3) .button {
   background: none;
 }
 
-#s3:target ~ .bullets > *:nth-child(3):hover {
+#s3:target ~ .bullets > *:nth-child(3):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s4:target ~ .bullets > *:nth-child(4) {
+#s4:target ~ .bullets > *:nth-child(4) .button {
   background: none;
 }
 
-#s4:target ~ .bullets > *:nth-child(4):hover {
+#s4:target ~ .bullets > *:nth-child(4):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
