@@ -22,30 +22,26 @@ http://stackoverflow.com/a/34696029/383904
 */
 
 .wrap {
-  max-width: 85vw;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  margin: 0 auto;
-  /* border: 2px solid red; */
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .wrapper {
-  /* max-width: 800px; */
+  max-width: 600px;
   background-color: var(--main);
-  max-width: 40vw;
   height: auto;
   text-align: center;
   border-radius: 2rem;
   overflow: hidden;
   margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
   /* position: absolute; */
   /* transform: translateY(50%) translateX(80%); */
 }
 
 .slider-image {
   max-width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .h1 {
@@ -55,10 +51,15 @@ http://stackoverflow.com/a/34696029/383904
 }
 
 .CSSgal {
-  /* position: relative;
-  overflow: hidden;
-  height: 100%; Or set a fixed height */
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  align-items: center;
+  /* max-width: 450px; */
+  margin: 0 auto;
+  overflow: hidden;
+  /* margin-left: 10%;
+  margin-right: 10%; */
 }
 
 /* SLIDER */
@@ -69,13 +70,6 @@ http://stackoverflow.com/a/34696029/383904
   white-space: nowrap;
   font-size: 0;
   transition: 0.8s;
-}
-
-.text-slider {
-  color: white;
-  transition: 0.3s;
-  white-space: nowrap;
-  text-align: center;
 }
 
 /* SLIDES */
@@ -93,35 +87,41 @@ http://stackoverflow.com/a/34696029/383904
 }
 
 .CSSgal .text-slider > * {
-  /* font-size: 1rem; */
   display: inline-block;
   white-space: normal;
   vertical-align: top;
   height: 100%;
   width: 100%;
-  /* background: none 50% no-repeat;
-  background-size: cover; */
-  /* position: absolute;
-  transform: translateY(110%) translate(-630%); */
+  order: 2;
+  flex: 1;
+  font-size: 1rem;
+  text-align: left;
+  margin-right: 2px;
+}
+
+.text-slider {
+  color: white;
+  transition: 0.3s;
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+  font-size: 0;
 }
 
 .text-slider__content {
-  margin-left: 0.25rem;
+  font-size: 1rem;
 }
 
 /* NAVIGATION */
 
 .CSSgal .bullets {
-  /* position: absolute; */
   z-index: 2;
-  /* bottom: 0;
-  padding: 10px 0; */
-  width: 100%;
   text-align: center;
-  transform: translateX(30%) translateY(-60%);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-right: 2rem;
+  order: 3;
+  flex: none;
+  background: var(--main);
 }
 .CSSgal .bullets > a {
   padding: 0.25rem;
@@ -157,6 +157,10 @@ a:hover .button {
 
 /* NAVIGATION BUTTONS */
 /* ALL: */
+.bullets > *:nth-child(1) .button {
+  background: none;
+}
+
 .CSSgal > s:target ~ .bullets > a > .button {
   background: var(--button);
 }
@@ -220,24 +224,29 @@ a:hover .button {
   -webkit-transform: translateX(-300%);
 }
 
+.text-slider {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+
 #s1:target ~ .text-slider {
-  transform: translateX(-32%) translateY(135%);
-  -webkit-transform: translateX(-32%) translateY(135%);
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
 }
 
 #s2:target ~ .text-slider {
-  transform: translateX(-132%) translateY(135%);
-  -webkit-transform: translateX(-132%) translateY(135%);
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
 }
 
 #s3:target ~ .text-slider {
-  transform: translateX(-232%) translateY(135%);
-  -webkit-transform: translateX(-232%) translateY(135%);
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
 }
 
 #s4:target ~ .text-slider {
-  transform: translateX(-327%) translateY(135%);
-  -webkit-transform: translateX(-327%) translateY(135%);
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
 }
 /* More slides? Add here more rules */
 
@@ -264,39 +273,18 @@ a:hover .button {
   text-decoration: none;
 }
 
-@media (max-width: 900px) {
-  .wrapper {
-    max-width: 70vw;
+@media (max-width: 450px) {
+  .CSSgal {
+    display: block;
   }
 
-  .wrap {
-    max-width: 95vw;
-    padding-right: 1rem;
+  .wrapper {
+    padding-bottom: 1rem;
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .CSSgal .bullets {
-    transform: translateX(0%) translateY(-140%);
-  }
-}
-
-@media (max-width: 480px) {
-  .wrapper {
-    max-width: 90vw;
-  }
-
-  .wrap {
-    max-width: 100%;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
-  }
-
-  .slider-image {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .CSSgal .slider > * {
-    padding-top: 1rem;
+    margin-bottom: 0.25rem;
   }
 }
