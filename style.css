@@ -7,26 +7,13 @@
   --main: #25282a;
   --button: #71abff;
 }
-/* html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font: 16px/1.3 sans-serif;
-} */
 
-/*
-PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
-http://stackoverflow.com/a/34696029/383904
-*/
-
-.wrap {
+.wrapper {
   padding-right: 1rem;
   padding-left: 1rem;
 }
 
-.wrapper {
+.slider-wrapper {
   max-width: 600px;
   background-color: var(--main);
   height: auto;
@@ -36,11 +23,9 @@ http://stackoverflow.com/a/34696029/383904
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
-  /* position: absolute; */
-  /* transform: translateY(50%) translateX(80%); */
 }
 
-.slider-image {
+.slider-main__img {
   max-width: 100%;
 }
 
@@ -50,35 +35,24 @@ http://stackoverflow.com/a/34696029/383904
   text-align: center;
 }
 
-.CSSgal {
+.slider {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
-  /* max-width: 450px; */
   margin: 0 auto;
   overflow: hidden;
-  /* margin-left: 10%;
-  margin-right: 10%; */
 }
 
-/* SLIDER */
-
-.CSSgal .slider {
+.slider .slider-main {
   height: 100%;
-  /* max-width: 600px; */
   white-space: nowrap;
   font-size: 0;
   transition: 0.8s;
 }
 
-/* SLIDES */
-
-.CSSgal .slider > * {
-  /* font-size: 1rem; */
+.slider .slider-main > * {
   display: inline-block;
-  /* white-space: normal; */
-  /* vertical-align: top; */
   padding-top: 2rem;
   height: 100%;
   width: 100%;
@@ -86,7 +60,7 @@ http://stackoverflow.com/a/34696029/383904
   background-size: cover;
 }
 
-.CSSgal .text-slider > * {
+.slider .slider-secondary > * {
   display: inline-block;
   white-space: normal;
   vertical-align: top;
@@ -99,7 +73,7 @@ http://stackoverflow.com/a/34696029/383904
   margin-right: 2px;
 }
 
-.text-slider {
+.slider-secondary {
   color: white;
   transition: 0.3s;
   white-space: nowrap;
@@ -108,13 +82,11 @@ http://stackoverflow.com/a/34696029/383904
   font-size: 0;
 }
 
-.text-slider__content {
+.slider-secondary__content {
   font-size: 1rem;
 }
 
-/* NAVIGATION */
-
-.CSSgal .bullets {
+.slider .slider-bullets {
   z-index: 2;
   text-align: center;
   margin-top: 1rem;
@@ -123,7 +95,7 @@ http://stackoverflow.com/a/34696029/383904
   flex: none;
   background: var(--main);
 }
-.CSSgal .bullets > a {
+.slider .slider-bullets > a {
   padding: 0.25rem;
   margin: -0.25rem;
 }
@@ -141,132 +113,106 @@ http://stackoverflow.com/a/34696029/383904
   transition: 0.3s;
 }
 
-/* .CSSgal .bullets > a + a {
-  background: rgba(255, 255, 255, 0.5); 
-} */
-
-/* .CSSgal .bullets > a:hover {
-  background: white !important;
-  border: none;
-} */
-
 a:hover .button {
   background: white !important;
   border: none;
 }
 
-/* NAVIGATION BUTTONS */
-/* ALL: */
-.bullets > *:nth-child(1) .button {
+.slider-bullets > *:nth-child(1) .button {
   background: none;
 }
 
-.CSSgal > s:target ~ .bullets > a > .button {
+.slider > s:target ~ .slider-bullets > a > .button {
   background: var(--button);
 }
-/* ACTIVE */
-#s1:target ~ .bullets > *:nth-child(1) .button {
+
+#s1:target ~ .slider-bullets > *:nth-child(1) .button {
   background: none;
 }
 
-#s1:target ~ .bullets > *:nth-child(1):hover .button {
+#s1:target ~ .slider-bullets > *:nth-child(1):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s2:target ~ .bullets > *:nth-child(2) .button {
+#s2:target ~ .slider-bullets > *:nth-child(2) .button {
   background: none;
 }
 
-#s2:target ~ .bullets > *:nth-child(2):hover .button {
+#s2:target ~ .slider-bullets > *:nth-child(2):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s3:target ~ .bullets > *:nth-child(3) .button {
+#s3:target ~ .slider-bullets > *:nth-child(3) .button {
   background: none;
 }
 
-#s3:target ~ .bullets > *:nth-child(3):hover .button {
+#s3:target ~ .slider-bullets > *:nth-child(3):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
 
-#s4:target ~ .bullets > *:nth-child(4) .button {
+#s4:target ~ .slider-bullets > *:nth-child(4) .button {
   background: none;
 }
 
-#s4:target ~ .bullets > *:nth-child(4):hover .button {
+#s4:target ~ .slider-bullets > *:nth-child(4):hover .button {
   background: none !important;
   border: 2px solid white !important;
 }
-/* More slides? Add here more rules */
 
-/* SLIDER ANIMATION POSITIONS */
-
-#s1:target ~ .slider {
+#s1:target ~ .slider-main {
   transform: translateX(0%);
   -webkit-transform: translateX(0%);
 }
 
-#s2:target ~ .slider {
+#s2:target ~ .slider-main {
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
 }
 
-#s3:target ~ .slider {
+#s3:target ~ .slider-main {
   transform: translateX(-200%);
   -webkit-transform: translateX(-200%);
 }
 
-#s4:target ~ .slider {
+#s4:target ~ .slider-main {
   transform: translateX(-300%);
   -webkit-transform: translateX(-300%);
 }
 
-.text-slider {
+.slider-secondary {
   transform: translateX(0%);
   -webkit-transform: translateX(0%);
 }
 
-#s1:target ~ .text-slider {
+#s1:target ~ .slider-secondary {
   transform: translateX(0%);
   -webkit-transform: translateX(0%);
 }
 
-#s2:target ~ .text-slider {
+#s2:target ~ .slider-secondary {
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
 }
 
-#s3:target ~ .text-slider {
+#s3:target ~ .slider-secondary {
   transform: translateX(-200%);
   -webkit-transform: translateX(-200%);
 }
 
-#s4:target ~ .text-slider {
+#s4:target ~ .slider-secondary {
   transform: translateX(-300%);
   -webkit-transform: translateX(-300%);
 }
-/* More slides? Add here more rules */
 
-/* YOU'RE THE DESIGNER! 
-   ____________________
-   All above was mainly to get it working :)
-   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
-
-.CSSgal {
+.slider {
   color: #fff;
   text-align: center;
 }
-/* .CSSgal .slider h2 {
-  margin-top: 40vh;
-  font-weight: 200;
-  letter-spacing: -0.06em;
-  word-spacing: 0.2em;
-  font-size: 3em;
-} */
-.CSSgal a {
+
+.slider a {
   border-radius: 50%;
   margin: 0 3px;
   color: rgba(0, 0, 0, 0.8);
@@ -274,17 +220,17 @@ a:hover .button {
 }
 
 @media (max-width: 450px) {
-  .CSSgal {
+  .slider {
     display: block;
   }
 
-  .wrapper {
+  .slider-wrapper {
     padding-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .CSSgal .bullets {
+  .slider .slider-bullets {
     margin-bottom: 0.25rem;
   }
 }
