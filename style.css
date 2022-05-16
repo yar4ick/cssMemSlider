@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:root {
+  --main: #25282a;
+  --button: #71abff;
+}
+
+.wrapper {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.slider-wrapper {
+  max-width: 600px;
+  background-color: var(--main);
+  height: auto;
+  text-align: center;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.slider-main__img {
+  max-width: 100%;
+}
+
+.h1 {
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider .slider-main {
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0;
+  transition: 0.8s;
+}
+
+.slider .slider-main > * {
+  display: inline-block;
+  padding-top: 2rem;
+  height: 100%;
+  width: 100%;
+  background: none 50% no-repeat;
+  background-size: cover;
+}
+
+.slider .slider-secondary > * {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  order: 2;
+  flex: 1;
+  font-size: 1rem;
+  text-align: left;
+  margin-right: 2px;
+}
+
+.slider-secondary {
+  color: white;
+  transition: 0.3s;
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+  font-size: 0;
+}
+
+.slider-secondary__content {
+  font-size: 1rem;
+}
+
+.slider .slider-bullets {
+  z-index: 2;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  order: 3;
+  flex: none;
+  background: var(--main);
+}
+.slider .slider-bullets > a {
+  padding: 0.25rem;
+  margin: -0.25rem;
+}
+
+.button {
+  display: inline-block;
+  height: 0.65rem;
+  width: 0.65rem;
+  border-radius: 50%;
+  border: 2px solid var(--button);
+  background-color: var(--button);
+  margin: 0 0.25rem 0 0.25rem;
+  transition: 0.2s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a:hover .button {
+  background: white !important;
+  border: none;
+}
+
+.slider-bullets > *:nth-child(1) .button {
+  background: none;
+}
+
+.slider > s:target ~ .slider-bullets > a > .button {
+  background: var(--button);
+}
+
+#s1:target ~ .slider-bullets > *:nth-child(1) .button {
+  background: none;
+}
+
+#s1:target ~ .slider-bullets > *:nth-child(1):hover .button {
+  background: none !important;
+  border: 2px solid white !important;
+}
+
+#s2:target ~ .slider-bullets > *:nth-child(2) .button {
+  background: none;
+}
+
+#s2:target ~ .slider-bullets > *:nth-child(2):hover .button {
+  background: none !important;
+  border: 2px solid white !important;
+}
+
+#s3:target ~ .slider-bullets > *:nth-child(3) .button {
+  background: none;
+}
+
+#s3:target ~ .slider-bullets > *:nth-child(3):hover .button {
+  background: none !important;
+  border: 2px solid white !important;
+}
+
+#s4:target ~ .slider-bullets > *:nth-child(4) .button {
+  background: none;
+}
+
+#s4:target ~ .slider-bullets > *:nth-child(4):hover .button {
+  background: none !important;
+  border: 2px solid white !important;
+}
+
+#s1:target ~ .slider-main {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+
+#s2:target ~ .slider-main {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+#s3:target ~ .slider-main {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+
+#s4:target ~ .slider-main {
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
+}
+
+.slider-secondary {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+
+#s1:target ~ .slider-secondary {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+
+#s2:target ~ .slider-secondary {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+#s3:target ~ .slider-secondary {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+
+#s4:target ~ .slider-secondary {
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
+}
+
+.slider {
+  color: #fff;
+  text-align: center;
+}
+
+.slider a {
+  border-radius: 50%;
+  margin: 0 3px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+@media (max-width: 450px) {
+  .slider {
+    display: block;
+  }
+
+  .slider-wrapper {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .slider .slider-bullets {
+    margin-bottom: 0.25rem;
+  }
+}
